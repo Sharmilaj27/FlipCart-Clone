@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Products - Flipkart Clone</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <h2>Flip<span>kart</span></h2>
+        </div>
+
+        <div class="search-box">
+
+            <input
+            type="text"
+            id="searchInput"
+            placeholder="Search Products">
+
+            <button>
+                <i class="fas fa-search"></i>
+            </button>
+
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="cart.html">
+                <i class="fas fa-shopping-cart"></i>
+                Cart
+            </a>
+
+            <a href="orders.html">
+                Orders
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- Products Section -->
+
+    <section class="products">
+
+        <h2>All Products</h2>
+
+        <div
+        class="product-grid"
+        id="productGrid">
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>Flipkart Clone</h3>
+
+            <p>
+                Best Online Shopping Experience
+            </p>
+
+        </div>
+
+    </footer>
+
+<script>
+
+const productGrid =
+document.getElementById("productGrid");
+
+async function loadProducts(){
+
+    try{
+
+        const response =
+        await fetch(
+        "http://localhost:8080/api/products"
+        );
+
+        const products =
+        await response.json();
+
+        productGrid.innerHTML = "";
+
+        products.forEach(product => {
+
+            productGrid.innerHTML += `
+
+            <div class="product-card">
+
+                <img
+                src="${product.imageUrl}"
+                alt="${product.name}">
+
+                <h3>
+                    ${product.name}
+                </h3>
+
+                <p>
+                    ${product.description}
+                </p>
+
+                <h4>
+                    ₹${product.price}
+                </h4>
+
+                <button
+                class="add-cart"
+                onclick="addToCart(${product.id})">
+
+                    Add To Cart
+
+                </button>
+
+            </div>
+
+            `;
+
+        });
+
+    }
+    catch(error){
+
+        console.log(error);
+
+        productGrid.innerHTML =
+        "<h2>Unable to load products</h2>";
+
+    }
+
+}
+
+function addToCart(id){
+
+    alert(
+    "Product Added To Cart"
+    );
+
+}
+
+loadProducts();
+
+</script>
+
+</body>
+
+</html>

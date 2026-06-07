@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1d04804d-61d6-4c51-92d7-a685065546eb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/ecommerce-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-backend/src/main/java/com/example/backend/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-backend/src/main/java/com/example/backend/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-backend/src/main/java/com/example/backend/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-backend/src/main/java/com/example/backend/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-backend/src/main/java/com/example/backend/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-backend/src/main/java/com/example/backend/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-backend/src/main/java/com/example/backend/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-backend/src/main/java/com/example/backend/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-backend/src/main/java/com/example/backend/serviceImpl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-backend/src/main/java/com/example/backend/serviceImpl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ecommerce-backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ecommerce-backend/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/ecommerce-backend" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="3EIeAwGAWmUPZIsQSLiivHxLEt4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.BackendApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/tanuv/Downloads/Ecommerce-website",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.web.browsers"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Ecommerce-backend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.138" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1d04804d-61d6-4c51-92d7-a685065546eb" name="Changes" comment="" />
+      <created>1779870371588</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1779870371588</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ecommerce-backend/src/main/java/com/example/backend/controller/AuthController.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

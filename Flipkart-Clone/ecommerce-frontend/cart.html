@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Shopping Cart</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <h2>Flip<span>kart</span></h2>
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="products.html">Products</a>
+
+            <a href="orders.html">Orders</a>
+
+        </div>
+
+    </header>
+
+    <!-- Cart -->
+
+    <div class="cart-container">
+
+        <h2 style="margin-bottom:20px;">
+            My Cart
+        </h2>
+
+        <div id="cartItems">
+
+        </div>
+
+        <h2 id="totalPrice">
+            Total: ₹0
+        </h2>
+
+        <br>
+
+        <a href="checkout.html">
+
+            <button class="buy-now">
+                Proceed To Checkout
+            </button>
+
+        </a>
+
+    </div>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>Flipkart Clone</h3>
+
+            <p>
+                College Project
+            </p>
+
+        </div>
+
+    </footer>
+
+<script>
+
+async function loadCart(){
+
+    try{
+
+        const response =
+        await fetch(
+        "http://localhost:8080/api/cart"
+        );
+
+        const carts =
+        await response.json();
+
+        const cartContainer =
+        document.getElementById("cartItems");
+
+        let total = 0;
+
+        cartContainer.innerHTML = "";
+
+        carts.forEach(cart => {
+
+            if(cart.cartItems){
+
+                cart.cartItems.forEach(item => {
+
+                    total +=
+                    item.product.price *
+                    item.quantity;
+
+                    cartContainer.innerHTML += `
+
+                    <div class="cart-item">
+
+                        <img
+                        src="${item.product.imageUrl}">
+
+                        <div>
+
+                            <h3>
+                                ${item.product.name}
+                            </h3>
+
+                            <p>
+                                ₹${item.product.price}
+                            </p>
+
+                            <p>
+                                Quantity:
+                                ${item.quantity}
+                            </p>
+
+                            <br>
+
+                            <button
+                            class="remove-btn"
+                            onclick="removeItem(${item.id})">
+
+                                Remove
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    `;
+
+                });
+
+            }
+
+        });
+
+        document
+        .getElementById("totalPrice")
+        .innerHTML =
+        `Total: ₹${total}`;
+
+    }
+    catch(error){
+
+        console.log(error);
+
+    }
+
+}
+
+async function removeItem(id){
+
+    try{
+
+        await fetch(
+        `http://localhost:8080/api/cart/remove/${id}`,
+        {
+            method:"DELETE"
+        });
+
+        alert(
+        "Item Removed"
+        );
+
+        loadCart();
+
+    }
+    catch(error){
+
+        console.log(error);
+
+    }
+
+}
+
+loadCart();
+
+</script>
+
+</body>
+
+</html>

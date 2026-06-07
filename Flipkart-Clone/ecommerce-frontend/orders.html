@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Orders</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <h2>Flip<span>kart</span></h2>
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="products.html">Products</a>
+
+            <a href="cart.html">Cart</a>
+
+        </div>
+
+    </header>
+
+    <!-- Orders Section -->
+
+    <div class="orders-container">
+
+        <h2 style="margin-bottom:20px;">
+            My Orders
+        </h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Order ID</th>
+
+                    <th>Total Price</th>
+
+                    <th>Status</th>
+
+                    <th>Payment Status</th>
+
+                    <th>Order Date</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="ordersTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>Flipkart Clone</h3>
+
+            <p>
+                Online Shopping Project
+            </p>
+
+        </div>
+
+    </footer>
+
+<script>
+
+async function loadOrders(){
+
+    try{
+
+        const response =
+        await fetch(
+        "http://localhost:8080/api/orders"
+        );
+
+        const orders =
+        await response.json();
+
+        const table =
+        document.getElementById(
+        "ordersTable"
+        );
+
+        table.innerHTML = "";
+
+        orders.forEach(order => {
+
+            table.innerHTML += `
+
+            <tr>
+
+                <td>
+                    ${order.id}
+                </td>
+
+                <td>
+                    ₹${order.totalPrice}
+                </td>
+
+                <td>
+                    ${order.status}
+                </td>
+
+                <td>
+                    ${order.paymentStatus}
+                </td>
+
+                <td>
+                    ${order.createdAt}
+                </td>
+
+            </tr>
+
+            `;
+
+        });
+
+    }
+    catch(error){
+
+        console.log(error);
+
+    }
+
+}
+
+loadOrders();
+
+</script>
+
+</body>
+
+</html>
